@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --cyber-blue: #00fff2;
+  --cyber-pink: #ff00ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes borderFlow {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.cyberpunk-btn-wrapper {
+  position: relative;
+  padding: 4px;
+  isolation: isolate;
+}
+
+.cyberpunk-btn-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-pink), var(--cyber-blue));
+  background-size: 200% 100%;
+  animation: moveGradient 3s linear infinite;
+  z-index: -2;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+.cyberpunk-btn {
+  position: relative;
+  background: #1a1a1a;
+  color: var(--cyber-blue);
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  min-width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyberpunk-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 255, 242, 0.2), rgba(255, 0, 255, 0.2), rgba(0, 255, 242, 0.2));
+  background-size: 200% 100%;
+  animation: moveGradient 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyberpunk-btn:hover {
+  color: #7affff;
+  /* transform: scale(1.05); */
+  box-shadow: 0 0 20px rgba(0, 255, 242, 0.4);
+}
+
+.cyberpunk-btn:hover::before {
+  opacity: 1;
+}
+
+.cyberpunk-btn:active {
+  transform: scale(0.98);
+}
+
+.cyberpunk-btn-content {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 8px rgba(0, 255, 242, 0.4);
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 添加闪烁效果 */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 var(--cyber-pink), -0.05em -0.025em 0 var(--cyber-blue);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 var(--cyber-pink), -0.05em -0.025em 0 var(--cyber-blue);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 var(--cyber-pink), 0.025em 0.025em 0 var(--cyber-blue);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 var(--cyber-pink), 0.025em 0.025em 0 var(--cyber-blue);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 var(--cyber-pink), 0.05em 0 0 var(--cyber-blue);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 var(--cyber-pink), 0.05em 0 0 var(--cyber-blue);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 var(--cyber-pink), -0.025em -0.025em 0 var(--cyber-blue);
+  }
+}
+
+.cyberpunk-btn:hover .cyberpunk-btn-content {
+  animation: glitch 1s infinite;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --cyber-blue: #00fff2;
+  --cyber-pink: #ff00ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes borderFlow {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.cyberpunk-btn-wrapper {
+  position: relative;
+  padding: 4px;
+  isolation: isolate;
+}
+
+.cyberpunk-btn-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-pink), var(--cyber-blue));
+  background-size: 200% 100%;
+  animation: moveGradient 3s linear infinite;
+  z-index: -2;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+.cyberpunk-btn {
+  position: relative;
+  background: #1a1a1a;
+  color: var(--cyber-blue);
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  min-width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyberpunk-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 255, 242, 0.2), rgba(255, 0, 255, 0.2), rgba(0, 255, 242, 0.2));
+  background-size: 200% 100%;
+  animation: moveGradient 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyberpunk-btn:hover {
+  color: #7affff;
+  /* transform: scale(1.05); */
+  box-shadow: 0 0 20px rgba(0, 255, 242, 0.4);
+}
+
+.cyberpunk-btn:hover::before {
+  opacity: 1;
+}
+
+.cyberpunk-btn:active {
+  transform: scale(0.98);
+}
+
+.cyberpunk-btn-content {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 8px rgba(0, 255, 242, 0.4);
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 添加闪烁效果 */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 var(--cyber-pink), -0.05em -0.025em 0 var(--cyber-blue);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 var(--cyber-pink), -0.05em -0.025em 0 var(--cyber-blue);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 var(--cyber-pink), 0.025em 0.025em 0 var(--cyber-blue);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 var(--cyber-pink), 0.025em 0.025em 0 var(--cyber-blue);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 var(--cyber-pink), 0.05em 0 0 var(--cyber-blue);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 var(--cyber-pink), 0.05em 0 0 var(--cyber-blue);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 var(--cyber-pink), -0.025em -0.025em 0 var(--cyber-blue);
+  }
+}
+
+.cyberpunk-btn:hover .cyberpunk-btn-content {
+  animation: glitch 1s infinite;
+}
