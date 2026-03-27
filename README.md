@@ -113,7 +113,7 @@ This project is a submission for the **Avalanche Build Games 2026**. Originally 
 
 ## Live Demo
 
-[vexland.xyz](https://vexland.xyz)
+[vexland.vercel.app](https://vexland.vercel.app)
 
 ## License
 
